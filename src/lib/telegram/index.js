@@ -184,7 +184,7 @@ export async function getChannelInfo(Astro, { before = '', after = '', q = '', t
 
   // Where t.me can also be telegram.me, telegram.dog
   const host = getEnv(import.meta.env, Astro, 'TELEGRAM_HOST') ?? 't.me'
-  const channel = getEnv(import.meta.env, Astro, 'CHANNEL')
+  const channel = shareandiscuss(import.meta.env, Astro, 'CHANNEL')
   const staticProxy = getEnv(import.meta.env, Astro, 'STATIC_PROXY') ?? '/static/'
 
   const url = id ? `https://${host}/${channel}/${id}?embed=1&mode=tme` : `https://${host}/s/${channel}`
